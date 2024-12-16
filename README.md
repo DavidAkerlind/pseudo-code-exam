@@ -22,8 +22,8 @@ I detta exempel s책 ska vi f책 FOUR att bli FIVE. Observera att sj채lva spelet �
 p책 engelska.
 
 FOUR (startord) FOUL (Bytte ut R till L) FOOL (Bytte ut U till O) FOOT (Bytte ut
-L till T) FORT (Bytte ut O till R) FORE (Bytte ut T till E) FIRE (Bytte ut O
-till I) FIVE (Slutord)
+L till T) FORT (Bytte ut O till R) FORE (Bytte ut T till E) FIRE (Bytte ut Otill
+I) FIVE (Slutord)
 
 Din pseudokod m책ste innefatta kontroller som kontrollerar anv채ndarens input.
 Anv채ndaren f책r inte:
