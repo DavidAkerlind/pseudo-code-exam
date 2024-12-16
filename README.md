@@ -21,9 +21,14 @@ korrekt engelskt ord, dvs. det måste finnas i variabeln vid namn ordbok. Exempe
 I detta exempel så ska vi få FOUR att bli FIVE. Observera att själva spelet är
 på engelska.
 
-FOUR (startord) FOUL (Bytte ut R till L) FOOL (Bytte ut U till O) FOOT (Bytte ut
-L till T) FORT (Bytte ut O till R) FORE (Bytte ut T till E) FIRE (Bytte ut Otill
-I) FIVE (Slutord)
+-   FOUR (startord)
+-   FOUL (Bytte ut R till L)
+-   FOOL (Bytte ut U till O)
+-   FOOT (Bytte ut L till T)
+-   FORT (Bytte ut O till R)
+-   FORE (Bytte ut T till E)
+-   FIRE (Bytte ut Otill I)
+-   FIVE (Slutord)
 
 Din pseudokod måste innefatta kontroller som kontrollerar användarens input.
 Användaren får inte:
