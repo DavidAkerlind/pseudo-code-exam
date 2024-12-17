@@ -1,5 +1,5 @@
-// G-Version - Split the Nota
-// Skriv din pseudokod innanför nedanstående kommentarsblock
+// ===== G-Version - Split the Nota =====
+
 /*
 INPUT variabel summa (endast siffra)
 INPUT variabel antalVänner (endast siffra, större än 0)
@@ -8,7 +8,7 @@ INPUT variabel dricks (som ska vara ett i decimaltal)
 
 IF (summa > 0 eller antalVänner > 0 eller dricks > 0 eller inte är siffror THEN
     PRINT "Alla värden måste vara siffor större än > 0"
-ENDIF
+ENDIFt
 
 SET variabel totalSumma till summa * (dricks + 1)
 
@@ -17,9 +17,8 @@ SET variabel summaPerPerson till totalSumma / antalVänner
 PRINT "Varje person ska betala summaPerPerson kr"
 */
 
-// VG-Version - Lewis Carroll Word Puzzle
-// Skriv din pseudokod innanför nedanstående kommentarsblock
-// Startkoden är 100% frivillig och kan tas bort eller skrivas om
+// ===== VG-Version - Lewis Carroll Word Puzzle =====
+
 /*
 
 play();
@@ -33,8 +32,7 @@ function play()
     // Jag tänkte först om jag skulle bara ändra på startordet hela tiden för då slipper man en extra variabel osv. Men gjorde på detta sättet för jag ville använda startordsvariabeln i "du vann-texten" i slutet av spelet + att jag tycker att det gör spelet mer ändringsbart för andra ord. 
 
     PRINT "Startord: startOrd"
-    PRINT "Målet är att omvandla "startOrd" till "slutOrd"" genom att ändra en bokstav åt gången, varje gissning måste vara ett giltigt ord i det engelska språket   
-
+    PRINT "Målet är att omvandla "startOrd" till "slutOrd"" genom att ändra en bokstav åt gången, varje gissning måste vara ett giltigt ord i det engelska språket.
 
     WHILE  gissatOrd inte är != samma som slutOrd DO
 
@@ -55,6 +53,7 @@ function play()
 
             ELSE 
                 PRINT "Ogiltit ord, Du får endast byta en bokstav i taget"
+
             END IF
 
         END IF
