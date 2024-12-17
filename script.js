@@ -29,7 +29,8 @@ function play()
     SET variabel startOrd   = "FOUR"
     SET variabel slutOrd = "FIVE"
     SET variabel antaFörsök =  0
-    SET variabel gissatOrd = "NULL"
+    SET variabel gissatOrd = startOrd // Detta måste vara samma som start-ordet eftersom vi jämför med detta ord i isOneLetterApart funktionen och då första gången vi kollar ett ord så har vi inte ändrat denna variabeln ännu och därför måste det vara samma som start ordet.
+    // Jag tänkte först om jag skulle bara ändra på startordet hela tiden för då slipper man en extra variabel osv. Men gjorde på detta sättet för jag ville använda startordsvariabeln i "du vann-texten" i slutet av spelet + att jag tycker att det gör spelet mer ändringsbart för andra ord. 
 
     PRINT "Startord: startOrd"
     PRINT "Målet är att omvandla "startOrd" till "slutOrd"" genom att ändra en bokstav åt gången, varje gissning måste vara ett giltigt ord i det engelska språket   
@@ -37,12 +38,13 @@ function play()
 
     WHILE  gissatOrd inte är != samma som slutOrd DO
 
-        INPUT variabel gissning // användaren matar in ett ord
-        
-        IF längden på gisning INTE är samma som != längden på startOrd THEN
-            PRINT "Ogiltigt ord. Ordet måste vara samma längd som " + startOrd
+        INPUT variabel gissning // användaren skriver in ett ord (en sträng)
+
+        IF längden på gissning INTE är samma som längden på startOrd THEN
+            PRINT "Ogiltigt ord. Ordet måste vara samma längd som startordet: " + startOrd
+
         ELSE
-            IF CALL FUNCTION isOneLetterApart(startOrd, gissning) = TRUE THEN 
+            IF CALL FUNCTION isOneLetterApart(gissatOrd, gissning) = TRUE THEN 
                 IF gissning finns i ordbok THEN 
                     PRINT "OKEJ ORD"
                     SET antalFörsök = antalFörsök + 1 // lägg till 1 på antalFörsök
@@ -65,7 +67,7 @@ END FUNCTION
 FUNCTION named isOneLetterApart(ord1, ord2)
     SET variabel diffCount till 0;
     
-    FOR bokstav FROM 0 TO längden på ord1 - 1 DO // minus 1 för att indexeringen i programering alltid börjar från 0 och inte 1
+    FOR bokstav FROM 0 TO längden på ord1 - 1 DO // minus 1 för att indexeringen i programering alltid börjar från 0 och inte 1. Denna FOR loop gör så att vi kollar bokstav för bokstav i båda orden med hjälp av index numret som i detta fall heter "bokstav" tar en anteckning om det är någon bokstav i det nya ordet som inte matchar med det tidigare ordets bokstäver.  
         IF ord1[bokstav] != ord2[bokstav]
             SET diffCount = diffCount + 1 // varje gång det skilljer en bokstav mellan ord1 och ord2 så adderar vi 1 på diffCount. diffCount får bara vara 1 annars betyder är det inte okej och vi returnerar FALSE
         END IF
@@ -76,15 +78,6 @@ FUNCTION named isOneLetterApart(ord1, ord2)
 END FUNCTION    
 
 
-//                 ====== Onödig funktion , inte med i min lösning utan bara som extra grej ======
-
-function isGuessInOrdbok(ordbok, gissning)
-    SET validWord till 0
-    FOR EACH ord in ordbok // denna går igenom varje ord i ordboken och jämför gissningen med varje ord, vet inte om man får ha FOR EACH loopar men man kan ju göra dem av en vanlig FOR loop så jag gissar att det är okej? 
-        IF gisnning är lika med ord // gissning = ord THEN
-            validWord till 1 // TRUE om ordet finns i listan  
-        ELSE
-            PRINT "Ogiltigt ord, finns inte med i ordlistan"
-   return validWord === 1; //returnerar sant endast om gissning finns i ordlistan
+//                
 
 */
